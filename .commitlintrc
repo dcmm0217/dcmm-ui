@@ -1,0 +1,21 @@
+{
+  "extends": [
+    "@commitlint/config-conventional"
+  ],
+  "rules": {
+    "type-enum": [
+      2,
+      "always",
+      [
+        "feat",//新特性
+        "fix",//修复bug
+        "refactor",//重构代码(既没有新增功能，也没有修复 bug)
+        "test",//修改测试文件
+        "build",//打包构建配置
+        "docs",//文档更新
+        "chore"//不重要提交
+      ]
+    ],
+    "subject-max-length": [1,"always", 150]
+  }
+}
