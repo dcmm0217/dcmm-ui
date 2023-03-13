@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "vitest",
-    "prepare": "husky install",
     "dev": "vitepress dev site",
     "build:site": "vitepress build site",
-    "preview": "vitepress preview site"
+    "preview": "vitepress preview site",
+    "build:dcmm": "gulp -f packages/components/script/build/index.ts"
   },
   "keywords": [],
   "author": "",
@@ -19,14 +19,19 @@
     "@mistjs/eslint-config-vue-jsx": "^0.0.5",
     "@mistjs/tsconfig": "^1.0.0",
     "@mistjs/tsconfig-vue": "^0.0.3",
+    "@types/gulp": "^4.0.10",
+    "@types/gulp-autoprefixer": "^0.0.33",
+    "@types/gulp-less": "^0.0.32",
     "@types/node": "^18.15.0",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitejs/plugin-vue-jsx": "^3.0.0",
     "eslint": "^8.36.0",
-    "husky": "^8.0.3",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-less": "^5.0.0",
     "less": "^4.1.3",
-    "lint-staged": "^13.2.0",
     "prettier": "^2.8.4",
+    "sucrase": "^3.29.0",
     "typescript": "^4.9.5",
     "unplugin-vue-define-options": "^1.2.4",
     "vite": "^4.1.4",
@@ -34,9 +39,6 @@
     "vite-plugin-vitepress-demo": "2.0.0-alpha.8",
     "vitepress": "1.0.0-alpha.52",
     "vitest": "^0.29.2"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx,vue}": "eslint --fix"
   },
   "pnpm": {
     "peerDependencyRules": {
